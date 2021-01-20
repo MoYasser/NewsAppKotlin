@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/menuHeadlines">
+
+    <fragment
+        android:id="@+id/menuHeadlines"
+        android:name="com.yasser.newsapp.ui.HeadlinesFragment"
+        android:label="fragment_headlines"
+        tools:layout="@layout/fragment_headlines" >
+        <action
+            android:id="@+id/action_menuHeadlines_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuSaved"
+        android:name="com.yasser.newsapp.ui.SavedItemsFragment"
+        android:label="fragment_saved_items"
+        tools:layout="@layout/fragment_saved_items" >
+        <action
+            android:id="@+id/action_menuSaved_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+        <action
+            android:id="@+id/action_menuSaved_to_menuHeadlines"
+            app:destination="@id/menuHeadlines" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailsFragment"
+        android:name="com.yasser.newsapp.ui.ItemDetailsFragment"
+        android:label="fragment_item_details"
+        tools:layout="@layout/fragment_item_details" >
+        <action
+            android:id="@+id/action_itemDetailsFragment_to_menuHeadlines"
+            app:destination="@id/menuHeadlines" />
+    </fragment>
+
+
+</navigation>
